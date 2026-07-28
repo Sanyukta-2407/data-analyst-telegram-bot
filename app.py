@@ -7,7 +7,7 @@ from memory import add_message, get_history
 from agent import ask_llm
 
 load_dotenv()
-
+print("API KEY FOUND:", bool(os.getenv("OPENAI_API_KEY")))
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 app = FastAPI(title="Data Analyst Telegram Bot")
