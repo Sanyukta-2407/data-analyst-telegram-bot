@@ -62,7 +62,7 @@ async def webhook(request: Request):
         log_event({
             "type": "user",
             "chat_id": chat_id,
-            "message": user_message
+            "message": user_text
         })
         reply = ask_llm(history)
         
