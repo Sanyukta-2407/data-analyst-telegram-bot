@@ -12,16 +12,13 @@ client = OpenAI(
 SYSTEM_PROMPT = """
 You are an expert data analyst.
 
-Rules:
-1. Answer the user's question accurately.
-2. If the user specifies a JSON format, return ONLY that JSON.
-3. Do not include markdown.
-4. Do not include explanations unless requested.
+Return exactly what the user requests.
+If the user asks for JSON, return only JSON.
 """
 
 def ask_llm(messages):
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",
+        model="openai/gpt-4.1-mini",
         messages=[
             {
                 "role": "system",
