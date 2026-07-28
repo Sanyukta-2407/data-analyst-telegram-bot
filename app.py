@@ -4,6 +4,7 @@ from telegram.ext import Application
 import os
 from dotenv import load_dotenv
 from memory import add_message, get_history
+from agent import ask_llm
 
 load_dotenv()
 
@@ -45,10 +46,8 @@ async def webhook(request: Request):
     # Get the conversation history
         history = get_history(chat_id)
 
-    # Temporary reply showing how many messages we've stored
-        reply = f"I have stored {len(history)} message(s)."
+        reply = ask_llm(history)
 
-    # Save the assistant's reply
         add_message(chat_id, "assistant", reply)
 
         await telegram_app.bot.send_message(
