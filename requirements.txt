@@ -1,9 +1,10 @@
-python-telegram-bot
-openai
-python-dotenv
-requests
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-telegram-bot==22.8
+python-dotenv==1.0.1
+openai>=1.0.0
 pandas
 numpy
 duckdb
-fastapi
-uvicorn
+requests
+httpx

@@ -1,7 +1,18 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI(title="Data Analyst Telegram Bot")
+
 
 @app.get("/")
-def home():
-    return {"status": "ok"}
+async def home():
+    return {
+        "status": "ok",
+        "service": "telegram-data-analyst"
+    }
+
+
+@app.get("/health")
+async def health():
+    return {
+        "status": "healthy"
+    }
