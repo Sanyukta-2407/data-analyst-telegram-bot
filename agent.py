@@ -18,7 +18,7 @@ If the user asks for JSON, return only JSON.
 
 def ask_llm(messages):
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="openai/gpt-oss-20b:free",
         messages=[
             {
                 "role": "system",
