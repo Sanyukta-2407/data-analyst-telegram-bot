@@ -5,7 +5,8 @@ from openai import OpenAI
 load_dotenv()
 
 client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
+    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url="https://aipipe.org/openrouter/v1"
 )
 
 SYSTEM_PROMPT = """
