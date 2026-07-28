@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 app = FastAPI(title="Data Analyst Telegram Bot")
 
@@ -16,3 +16,12 @@ async def health():
     return {
         "status": "healthy"
     }
+
+
+@app.post("/webhook")
+async def telegram_webhook(request: Request):
+    data = await request.json()
+
+    print(data)  # We'll replace this later
+
+    return {"ok": True}
